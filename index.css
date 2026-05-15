@@ -1,4 +1,4 @@
-/* Configurações Globais */
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@ body {
     flex-direction: column;
 }
 
-/* Pontinhos de fundo delicados */
+
 body::before {
     content: "";
     position: absolute;
@@ -29,7 +29,6 @@ body::before {
     pointer-events: none;
 }
 
-/* Barra de créditos no topo */
 .credits-top {
     text-align: center;
     margin-bottom: 0.7rem;
@@ -49,7 +48,6 @@ body::before {
     font-weight: 600;
 }
 
-/* Container Principal */
 .container {
     background: rgba(255, 252, 248, 0.96);
     backdrop-filter: blur(2px);
@@ -82,7 +80,6 @@ h1 span {
     display: none !important;
 }
 
-/* --- ESTILO TELA INICIAL --- */
 #nickname-input {
     width: 100%;
     padding: 12px 18px;
@@ -131,7 +128,6 @@ h1 span {
     transform: scale(1.05);
 }
 
-/* --- ESTILO CABEÇALHO DO JOGO (TAGS) --- */
 .header-tags {
     display: flex;
     justify-content: center;
@@ -153,7 +149,6 @@ h1 span {
 .level-tag { background: #fffcf0; color: #f3ba6a; font-weight: 600; text-transform: uppercase; border-color: #fde7cc; }
 .tag-dot { width: 7px; height: 7px; background: #f5aacd; border-radius: 50%; margin-right: 6px; }
 
-/* --- ÁREA DAS PALAVRAS --- */
 .tip-container {
     background: #fff5e8;
     border-radius: 60px;
@@ -190,7 +185,7 @@ h1 span {
     font-family: 'Playfair Display', serif;
 }
 
-/* --- ÁREA DO INPUT (?) --- */
+
 .letter-crystal {
     display: flex;
     flex-direction: column;
@@ -220,7 +215,6 @@ h1 span {
     font-weight: 500;
 }
 
-/* --- PAINEL DE FEEDBACK --- */
 .info-panel {
     background: rgba(255, 248, 240, 0.7);
     border-radius: 26px;
@@ -248,7 +242,6 @@ h1 span {
     border: 1px solid #fff1f5;
 }
 
-/* --- BOTÕES E DICAS --- */
 .reset-btn {
     background: linear-gradient(105deg, #fddfb5, #fbd3e8);
     border: none;
