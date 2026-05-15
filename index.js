@@ -13,7 +13,6 @@ const errorSound = new Audio('./sons/error.mp3');
 
 const URL_API = 'https://api-palavras-8ptt.onrender.com/';
 
-// TELA 1: INICIAR JOGO
 async function iniciarJogo(event) {
     if (event.key === "Enter") {
         const nicknameInput = document.getElementById('nickname-input');
@@ -93,8 +92,6 @@ async function buscarPalavra() {
         console.error("Erro ao buscar palavra:", err);
     }
 }
-
-// TELA 2: TENTAR LETRA
 async function tentarLetra(event) {
     if (event.key === "Enter") {
         const input = document.getElementById('letter-input');
@@ -102,7 +99,6 @@ async function tentarLetra(event) {
 
         const caractere = input.value.trim();
         
-        // Se o botão de reiniciar já apareceu, o Enter foca nele
         if (resetBtn && !resetBtn.classList.contains('hidden')) {
             resetBtn.focus();
             return;
@@ -138,12 +134,10 @@ async function tentarLetra(event) {
             if(errorCount) errorCount.innerText = data.erros_atuais;
             if(gameMessage) gameMessage.innerText = data.mensagem;
 
-            // --- LÓGICA DE CORES E FIM DE JOGO ---
             if (data.status_jogo !== 'Jogando') {
                 resetBtn.classList.remove('hidden');
                 
                 if (data.status_jogo.toLowerCase().includes('perdeu') || data.status_jogo.toLowerCase().includes('derrota')) {
-                    // MUDAR FUNDO PARA ROSA QUANDO ERRA/PERDE
                     document.body.style.background = 'radial-gradient(circle at 20% 30%, #ffe0e6 0%, #ffd6d6 100%)';
                     gameMessage.style.color = '#d96b8a';
                     
@@ -155,7 +149,6 @@ async function tentarLetra(event) {
                         gameContainer.insertBefore(revealMsg, resetBtn);
                     }
                 } else {
-                    // MUDAR FUNDO PARA VERDE QUANDO GANHA
                     document.body.style.background = 'radial-gradient(circle at 20% 30%, #e8fff1 0%, #d8ffe8 100%)';
                     gameMessage.style.color = '#69b97d';
                 }
